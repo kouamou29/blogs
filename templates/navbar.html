@@ -1,0 +1,36 @@
+<nav class="bg-gray-800 py-4">
+  <div class="mx-w-6xl mx-auto px-4">
+    <div class="flex  justify-between">
+     <div class="flex space-x-7 ">
+       <a href="" class="flex items-center py-4 px-2">
+        <span class="font-semibold text-gray-500 text-lg">blog</span>
+       </a>
+     </div>
+    <div class="hidden md:flex  items-center space-x-4 pr-48">
+        
+        <a
+        href="{% url 'index' %}"
+        class="py-4 px-2 text-green-500 border-b-4  font-semibold "
+        >Home</a>
+
+    <a
+    href="{% url 'singup' %}"
+    class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 
+           transition duration-300 "
+    >SingUp</a>
+   
+    <a
+    href="{% url 'login' %}"
+    class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 
+           transition duration-300 "
+    >Login</a>
+
+    <a
+    href="{% url 'user_profile' %}"
+    class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 
+           transition duration-300 "
+    >Pofile</a>
+    </div>
+    </div>
+  </div>
+</nav>

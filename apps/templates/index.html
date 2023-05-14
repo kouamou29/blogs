@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+ <div class="pl-16 mt-16">
+    <a class="py-3 px-4 bg-gray-800 rounded-xl pr-4 m-10 text-white hover:bg-gray-700" 
+    href="{% url 'add_post'%}">add post</a>
+    
+ </div>
+
+    
+
+        
+       
+        
+            <div class="py-16 px-10 bg-gray-200/50 rounded-xl ">
+                {% for post in posts  %}
+            <div class="  ">
+            <div class="flex justify-center ">
+           <p  class="text-center mt-2 " > Hauteur {{ post.user.username }} </p>
+           
+           {% for profs in  prof %}
+           
+             <img src="{{ profs.image.url }}" alt="" class="w-10 h-10 rounded-full text-center">
+           {% endfor %}
+            
+            </div>
+            <p class="text-center " >{{ post.title }}</p>
+            <p class="text-center " >{{ post.description }}</p>    
+            <p class="text-center " >publié:  il y a {{ post.date_created | timesince }}</p>    
+           
+         
+            <a class="py-3 px-4 bg-gray-800 rounded-xl pr-4 m-10 text-white hover:bg-red-700"
+                href="{% url 'edit_post' post.id%}">edit post</a>
+                <a class="py-3 px-4 bg-gray-800 rounded-xl pr-4 m-10 text-white hover:bg-red-700"
+                href="{% url 'delete_post' post.id%}">delete</a>
+            </div>
+            {% endfor %}
+        </div>
+  
+
+    
+
+{% endblock  %}
+    
